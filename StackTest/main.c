@@ -7,6 +7,7 @@
 //
 
 #include <stdio.h>
+#include <stdlib.h>
 #define CAPACITY 5
 
 int stack[CAPACITY], top = -1;
@@ -31,11 +32,13 @@ int main(int argc, const char * argv[]) {
     printf("4. Traverse \n");
     printf("5. Quit \n \n ");
     
-    printf("Enter your choice\n");
-    scanf("%d",&ch);
+    
     
     
     while (1) {
+        printf("Enter your choice ");
+        scanf(" %d",&ch);
+        
         switch (ch) {
             case 1:
                 printf("Enter element\n");
@@ -76,28 +79,43 @@ int isEmpty(){
 void push(int ele){
     
     if (isFull()) {
-        printf("Stack is overflow");
+        printf("Stack is overflow \n");
     }else{
         top = top + 1;
         stack[top] = ele;
-        printf("inserted element is %d",ele);
+        printf("inserted element is %d \n",ele);
     }
 }
 
 void pop(){
-    
+    if (isEmpty()) {
+        printf("Stack is underflow \n");
+    }else{
+        int ele = stack[top--];
+        printf("Pop element is %d \n",ele);
+    }
 }
 
 void peek(){
     
+    if (isEmpty()) {
+        printf("There is element in stack \n ");
+    }else{
+        int ele = stack[top];
+        printf("Peeked element is %d \n",ele);
+    }
 }
 
 void traverse(){
     
+    for (int i = 0; i <= top ; i++) {
+        printf(" %d \n",stack[i]);
+    }
+    
 }
 
 void quit(){
-    
+    exit(0);
 }
 
 
