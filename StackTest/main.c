@@ -29,7 +29,7 @@ int main(int argc, const char * argv[]) {
     printf("2. Pop \n");
     printf("3. Peek \n");
     printf("4. Traverse \n");
-    printf("5. Quit \n \n");
+    printf("5. Quit \n \n ");
     
     printf("Enter your choice\n");
     scanf("%d",&ch);
